@@ -214,7 +214,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown(
-    "<h1 class='main-title'>Klasifikasi Unggahan Terkait Isu Boikot Menggunakan <br> Algoritma <span style='color:#0BA6DF;'>Naive Bayes Classifier</span></h1>",
+    "<h1 class='main-title'>Visualisasi Hasil Klasifikasi Terkait Boikot Produk Israel Menggunakan Algoritma <span style='color:#0BA6DF;'>Naive Bayes Classifier</span></h1>",
     unsafe_allow_html=True
 )
 
@@ -306,7 +306,7 @@ with tab1:
         st.plotly_chart(fig_after, use_container_width=True, config={'displayModeBar': False})
 
     st.markdown("---")
-    st.header("Sampel Data Hasil Pembagian")
+    st.header("Data Hasil Pembagian")
 
     tab_train_sample, tab_test_sample = st.tabs(["Data Latih (Train)", "Data Uji (Test)"])
 
@@ -330,10 +330,9 @@ with tab1:
 # --- TAB 2: KATA POPULER & WORDCLOUD ---
 # ==============================================================================
 with tab2:
-    st.header("Analisis Teks")
     wordclouds_dict, positive_texts, negative_texts = generate_sentiment_wordclouds(df_data)
 
-    st.markdown("<h2 style='text-align: left; color: white;'>Kata-kata Paling Populer</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: left; color: white;'>kata Paling Populer</h2>", unsafe_allow_html=True)
     col_pop_pos, col_pop_neg = st.columns(2)
 
     with col_pop_pos:
@@ -389,7 +388,7 @@ with tab2:
             st.info("Tidak ada data kata populer untuk sentimen negatif.")
 
     st.markdown("---")
-    st.subheader("Word Cloud")
+    st.subheader("Wordcloud")
     col_wc1, col_wc2 = st.columns(2)
     with col_wc1:
         if 'Positif' in wordclouds_dict:
